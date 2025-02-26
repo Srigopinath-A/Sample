@@ -2,7 +2,8 @@
 - name: Send email via AWX
   hosts: localhost
   tasks:
-    - ansible.builtin.mail:
+    - name: send mail
+      community.general.mail:
         host: smtp.gmail.com
         port: 587
         username: 2020it0875@svce.ac.in
