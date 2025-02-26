@@ -1,0 +1,21 @@
+---
+- name: list the services installed in machine along with thier version
+  hosts: db1
+  become: yes
+  tasks:
+    - name: Get the list of installed services
+      shell: |
+        #!/bin/bash
+        for service in $(service --status-all | grep ' ' | awk '{print $4}'); do
+            version=$(dpkg-query -W -f='${Package} ${Version}\n' | grep "^$service" | awk '{print $2}' | head -n 1)
+            if [ ! -z "$version" ] && [ "$version" != "not" ]; then
+                main_version=$(echo "$version" | cut -d'-' -f1 | cut -d'~' -f1)
+                echo "$service - $main_version"
+            fi
+        done
+ 
+      register: service_list
+ 
+    - name: Display the list of installed services
+      debug:
+        msg: "{{ service_list.stdout_lines }}"    
