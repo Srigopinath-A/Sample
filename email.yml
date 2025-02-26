@@ -3,7 +3,7 @@
   hosts: localhost
   tasks:
     - name: Send mail
-      community.general.mail:  # <-- Use the correct module name
+      mail:
         host: smtp.gmail.com
         port: 587
         username: 2020it0875@svce.ac.in
@@ -12,4 +12,4 @@
         to: vangalshravankumar.srinivaschary@movate.com
         subject: to test awx
         body: hii it is pinging
-        secure: starttls
+        subtype: "plain"
