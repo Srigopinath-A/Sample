@@ -1,0 +1,15 @@
+---
+- name: Send email via AWX
+  hosts: localhost
+  tasks:
+    - ansible.builtin.mail:
+        host: smtp.gmail.com
+        port: 587
+        username: 2020it0875@svce.ac.in
+        password: #Gopinaths2830
+        from: 2020it0875@svce.ac.in
+        to: vangalshravankumar.srinivaschary@movate.com
+        subject: to test awx
+        body: hii it is pinging
+        secure: starttls
+      delegate_to: localhost
