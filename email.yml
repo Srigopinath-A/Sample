@@ -2,8 +2,8 @@
 - name: Send email via AWX
   hosts: localhost
   tasks:
-    - name: to send mail
-      mail:
+    - name: Send mail
+      community.general.mail:  # <-- Use the correct module name
         host: smtp.gmail.com
         port: 587
         username: 2020it0875@svce.ac.in
