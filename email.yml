@@ -3,7 +3,7 @@
   hosts: localhost
   tasks:
     - name: Send mail
-      community.general.mail.
+      community.general.mail:
         host: smtp.gmail.com
         port: 25
         username: 2020it0875@svce.ac.in
