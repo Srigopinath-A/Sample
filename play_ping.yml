@@ -1,6 +1,6 @@
 ---
 - name: list the services installed in machine along with thier version
-  hosts: db1
+  hosts: localhost
   become: yes
   tasks:
     - name: Get the list of installed services
