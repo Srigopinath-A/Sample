@@ -13,5 +13,5 @@
         host: 'smtp.google.com'
         port: 587
         username: 2020it0875@svce.ac.in
-        password: #Gopinaths2830
+        password: 
         secure: starttls
