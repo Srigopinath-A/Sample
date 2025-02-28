@@ -1,7 +1,7 @@
 ---
 - name: Send an email using community.general.mail
   hosts: localhost
-  become: no
+  become: false
   tasks:
     - name: Send an email using community.general.mail
       community.general.mail:
