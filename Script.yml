@@ -1,7 +1,7 @@
 ---
 - name: the mail have to send 
   hosts: localhost
-  become: fales
+  become: false
   tasks:
     - name: Script call
       ansible.builtin.command:
