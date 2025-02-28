@@ -4,11 +4,12 @@
   become: false
   tasks:
     - name: Send an email using community.general.mail
-      community.general.mail:
+      community.general.smtp:
         host: smtp.gmail.com
         port: 587
         username: 2020it0875@svce.ac.in
         password: #Gopinaths2830
+        from: 2020it0875@svce.ac.in
         to: srigopinath.angamuthuraja@movate.com
         subject: "Test Email from AWX"
         body: "This is a test email sent from AWX without using mailx."
