@@ -4,4 +4,7 @@
   become: false
   tasks:
     - name: Script call
-      ansible.builtin.Script: Sendmain.py
+      ansible.builtin.command:
+        cmd: python3 Sendmain.py
+      args:
+        chdir: /home/azureuser/Sendmain.py
