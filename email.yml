@@ -10,7 +10,7 @@
           - srigopinath.angamuthuraja@movate.com
         subject: "Test Email from AWX"
         body: "This is a test email sent from AWX without using mailx."
-        host: smtp.gmail.com
+        host: 'smtp.gmail.com'
         port: 587
         username: 2020it0875@svce.ac.in
         password: #Gopinaths2830
