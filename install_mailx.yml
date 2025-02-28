@@ -4,9 +4,14 @@
   become: yes
   become_method: sudo
   tasks:
-
+    - name: install sudo
+      apt:
+        name: sudo
+        state: present
+      when: ansible_os_family == 'Debian'
     - name: to install mailx
-      ansible.builtin.apt:
+      apt:
         name: bsd-mailx
         state: present
       when: ansible_os_family == 'Debian'
+
