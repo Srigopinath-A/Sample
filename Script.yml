@@ -4,9 +4,18 @@
   become: false
   become_user: root
   tasks:
+    - name: to check the folder
+      ansible.builtin.file:
+        path: /home/azureuser
+        state: directory
+        mode: "0755"
+    - name: to change the persmissiom
+      ansible.builtin.file:
+        path: /home/azureuser/Sendmain.py
+        state: file
+        mode: "0755"
     - name: Script call
       ansible.builtin.command:
         cmd: python3 Sendmain.py
       args:
         chdir: /home/azureuser
-        mod: 766
