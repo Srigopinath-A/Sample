@@ -8,4 +8,4 @@
       ansible.builtin.apt:
         name: heirloom-mailx
         state: present
-        when: ansible_os_family = 'ubuntu'
+        when: ansible_os_family == 'Ubuntu'
