@@ -4,12 +4,12 @@
   become: yes
   tasks:
     - name: sudo
-      apt:
+      ansible.builtin.apt:
         name: sudo
         state: present
       when: ansible_os_family == "Debian"
     - name: install mailx
-      apt:
+      ansible.builtin.apt:
         name: bsd-mailx
         state: present
       when: ansible_os_family == "Debian"
