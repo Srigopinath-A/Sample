@@ -1,0 +1,7 @@
+---
+- name: Install community.general collection
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Install community.general collection
+      ansible.builtin.shell: ansible-galaxy collection install community.general
