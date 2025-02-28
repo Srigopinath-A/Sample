@@ -1,0 +1,4 @@
+- name: send mail
+  tasks: 
+  ansible.builtin.command: 
+    cmd: "echo 'hiii' | mailx -s 'test mail' -r '2020it0875@svce.ac.in' srigopinath.angamuthuraja@movate.com"
