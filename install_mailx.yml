@@ -2,7 +2,7 @@
 - name: To install mail x
   hosts: localhost
   become: yes
-  become_method: sudo
+  become_method: su
   tasks:
     - name: install sudo
       apt:
