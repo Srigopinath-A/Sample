@@ -1,0 +1,11 @@
+---
+- name: To install mail x
+  hosts: local
+  become: yes
+  tasks:
+
+    - name: to install mailx
+      ansible.builtin.apt:
+        name: heirloom-mailx
+        state: present
+        when: ansible_os_family = 'ubuntu'
