@@ -2,6 +2,7 @@
 - name: To install mail x
   hosts: localhost
   become: yes
+  become_method: sudo
   tasks:
 
     - name: to install mailx
