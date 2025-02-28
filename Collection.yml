@@ -1,7 +1,7 @@
 ---
 - name: Install community.general collection
   hosts: localhost
-  become: yes
+  become: false
   tasks:
     - name: Install community.general collection
       ansible.builtin.shell:
