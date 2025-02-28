@@ -1,17 +1,29 @@
 ---
-- name: To install mail x
+- name: Ensure sudo is installed and install mailx
   hosts: localhost
   become: yes
   become_method: su
   tasks:
-    - name: install sudo
+    - name: Ensure sudo is installed (Debian)
       apt:
         name: sudo
         state: present
-      when: ansible_os_family == 'Debian'
-    - name: to install mailx
+      when: ansible_os_family == "Debian"
+
+    - name: Ensure sudo is installed (RedHat)
+      yum:
+        name: sudo
+        state: present
+      when: ansible_os_family == "RedHat"
+
+    - name: Ensure bsd-mailx is installed (Debian)
       apt:
         name: bsd-mailx
         state: present
-      when: ansible_os_family == 'Debian'
+      when: ansible_os_family == "Debian"
 
+    - name: Ensure mailx is installed (RedHat)
+      yum:
+        name: mailx
+        state: present
+      when: ansible_os_family == "RedHat"
