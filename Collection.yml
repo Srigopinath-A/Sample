@@ -4,4 +4,5 @@
   become: yes
   tasks:
     - name: Install community.general collection
-      ansible.builtin.shell: ansible-galaxy collection install community.general
+      ansible.builtin.shell:
+        cmd: ansible-galaxy collection install community.general
