@@ -4,26 +4,13 @@
   become: yes
   become_method: su
   tasks:
-    - name: Ensure sudo is installed (Debian)
+    - name: sudo
       apt:
         name: sudo
         state: present
       when: ansible_os_family == "Debian"
-
-    - name: Ensure sudo is installed (RedHat)
-      yum:
-        name: sudo
-        state: present
-      when: ansible_os_family == "RedHat"
-
-    - name: Ensure bsd-mailx is installed (Debian)
+    - name: install mailx
       apt:
         name: bsd-mailx
         state: present
       when: ansible_os_family == "Debian"
-
-    - name: Ensure mailx is installed (RedHat)
-      yum:
-        name: mailx
-        state: present
-      when: ansible_os_family == "RedHat"
