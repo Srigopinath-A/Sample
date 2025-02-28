@@ -1,15 +1,15 @@
 ---
-- name: Send email via AWX
+- name: Send an email using community.general.mail
   hosts: localhost
+  become: no
   tasks:
-    - name: Send mail
-      mail:
+    - name: Send an email using community.general.mail
+      community.general.mail:
         host: smtp.gmail.com
-        port: 25
+        port: 587
         username: 2020it0875@svce.ac.in
         password: #Gopinaths2830
-        from: 2020it0875@svce.ac.in
-        to: vangalshravankumar.srinivaschary@movate.com
-        subject: to test awx
-        body: hii it is pinging
-      delegate_to: localhost
+        to: srigopinath.angamuthuraja@movate.com
+        subject: "Test Email from AWX"
+        body: "This is a test email sent from AWX without using mailx."
+        secure: starttls
