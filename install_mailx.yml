@@ -1,6 +1,6 @@
 ---
 - name: To install mail x
-  hosts: local
+  hosts: localhost
   become: yes
   tasks:
 
