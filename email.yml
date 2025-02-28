@@ -4,7 +4,7 @@
   become: false
   tasks:
     - name: Send an email using community.general.mail
-      community.general.smtp:
+      smtp:
         from: 2020it0875@svce.ac.in
         to:
           - srigopinath.angamuthuraja@movate.com
@@ -13,5 +13,5 @@
         host: 'smtp.google.com'
         port: 587
         username: 2020it0875@svce.ac.in
-        password:
+        password: #Gopinaths2830
         secure: starttls
