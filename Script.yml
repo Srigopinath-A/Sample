@@ -9,3 +9,4 @@
         cmd: python3 Sendmain.py
       args:
         chdir: /home/azureuser
+        mod: 766
