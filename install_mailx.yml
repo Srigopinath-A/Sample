@@ -5,7 +5,7 @@
   tasks:
 
     - name: to install mailx
-      ansible.builtin.apt:
-        name: heirloom-mailx
+      apt:
+        name: bsd-mailx
         state: present
-        when: ansible_os_family == 'Ubuntu'
+      when: ansible_os_family == 'Debian'
